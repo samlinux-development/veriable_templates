@@ -1,0 +1,1 @@
+Contains all globale images.
