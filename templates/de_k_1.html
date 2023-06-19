@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>en_k_1</title>
+  <title>de_k_1</title>
 
   <style>
     body {
@@ -19,7 +19,7 @@
     }
 
     .content {
-      max-width: 650px;
+      max-width: 600px;
       width: 100%;
       margin-top: 30px;
       padding-left: 30px;
@@ -31,12 +31,11 @@
     }
 
     .templateType {
-      font-size: 60px;
+      font-size: 65px;
       font-weight: bold;
       margin-top: 30px;
       margin-bottom: 60px;
       color: #7888ff;
-      width: 850px;
     }
 
     .fullName {
@@ -52,11 +51,11 @@
       margin-bottom: 35px;
     } 
 
-    .competences {
-      margin-top: 35px;
+    .courseDetail {
+      margin-bottom: 35px;
     }
 
-    .competences div {
+    .competences div{
       margin-left: 0px;
     }
 
@@ -73,7 +72,7 @@
       text-overflow: ellipsis;
     }
 
-    .competencesTxt {
+    .competencesTxt p {
       margin: 0px;
     }
 
@@ -87,7 +86,7 @@
       max-height: 300px;
     }
 
-    .reference {
+    .reference{
       position: absolute;
       bottom: 0px;
       left: 0px;
@@ -113,33 +112,33 @@
   <div class="template">
     <div class="content">
       <div class="templateType">
-        <div>Confirmation of Participation</div>
+        <div>Teilnahmebestätigung</div>
       </div>
       
       <div>
         <div class="fullName">{{TPL_TN_GanzerName}}</div>
         <div class="certDoneTxt">
           {{#if TPL_PRO_IstSp}}
-          has successfully completed the course "{{TPL_PRO_Bezeichnung}}" on {{TPL_PRO_Kursabschluss}}.
+          hat den Kurs "{{TPL_PRO_Bezeichnung}}" erfolgreich am {{TPL_PRO_Kursabschluss}} abgeschlossen.
           {{else}}
-          has participated in the course {{#if TPL_PRO_IstLg}} bundle {{/if}} "{{TPL_PRO_Bezeichnung}}" from {{TPL_PRO_KursBeginn}} to {{TPL_PRO_KursEnde}}.
+          hat am {{#if TPL_PRO_IstLg}} Lehrgang {{else}} Kurs {{/if}} "{{TPL_PRO_Bezeichnung}}" von {{TPL_PRO_KursBeginn}} bis {{TPL_PRO_KursEnde}} teilgenommen.
           {{/if}}
         </div>
       </div>
 
-      <div>
+      <div class="courseDetail">
         {{#if TPL_PRO_KursDauer}}
-          Scope: {{TPL_PRO_KursDauer}}{{#if TPL_PRO_KursNiveau}}, {{/if}}
+          Umfang: {{TPL_PRO_KursDauer}}{{#if TPL_PRO_KursNiveau}}, {{/if}}
         {{/if}}
 
         {{#if TPL_PRO_KursNiveau}}
-          Level: {{TPL_PRO_KursNiveau}}
+          Niveau: {{TPL_PRO_KursNiveau}}
         {{/if}}
       </div>
 
       <div>
         <div class="competences">
-          <div class="competencesHeader">The following competences were taught by {{TPL_ORG_Anzeigename}}:</div>
+          <div class="competencesHeader">Folgende Kompetenzen wurden von {{TPL_ORG_Anzeigename}} vermittelt:</div>
           <div class="competencesTxt">{{{TPL_PRO_KursKompetenz}}}</div>
         </div>
       </div>

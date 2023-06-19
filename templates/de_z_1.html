@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>de_z_1</title>
+
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .template {
+      height: 753px;
+      width: 1083px;
+      border: 20px solid #7888ff;
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      position: relative;
+    }
+
+    .content {
+      max-width: 650px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .content div {
+      margin-left: 15px;
+    }
+
+    .templateType {
+      font-size: 70px;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 60px;
+      color: #7888ff;
+    }
+
+    .fullName {
+      color: #7888ff;
+      font-size: 38px;
+      font-weight: bold;
+    } 
+
+    .certDoneTxt {
+      font-size: 23px;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 70px;
+    } 
+
+    .competences {
+      margin-bottom: 30px;
+    }
+
+    .competences div {
+      margin-left: 0px;
+    }
+
+    .competencesHeader {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+
+    .competencesTxt {
+      font-size: 18px;
+      max-height: 150px;
+      overflow: hidden;
+    }
+
+    .competencesTxt p {
+      margin: 0px;
+    }
+
+    .certDetail {
+      display: -webkit-box;
+      -webkit-box-align: center;
+      position: absolute;
+      bottom: 0px;
+    }
+
+    .certDetail img {
+      max-height: 120px;
+    }
+
+    .certDetails div {
+      font-size: 15px;
+      margin-bottom: 2px;
+      margin-left: 0px;
+    }
+
+    .certDetails .certInfo {
+      margin-top: 15px;
+    }
+
+    .badgeContainer {
+      margin-top: 163px;
+      max-width: 295px;
+      width: 100%;
+    }
+
+    .badgeContainer img {
+      max-height: 300px;
+    }
+
+    .rightCorner {
+      position: absolute;
+      bottom: 11px;
+      right: 40px;
+      font-size: 15px;
+      text-align: right;
+    } 
+
+    .companyName {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="template">
+    <div class="content">
+      <div class="templateType">
+        <div>Zertifikat</div>
+      </div>
+      
+      <div>
+        <div class="fullName">{{TPL_TN_GanzerName}}</div>
+        <div class="certDoneTxt">
+          hat die Zertifizierung "{{TPL_PRO_Bezeichnung}}" erfolgreich am {{TPL_ZERT_ZertifikatDatum}} abgeschlossen.
+        </div>
+      </div>
+
+      <div>
+        <div class="competences">
+          <div class="competencesHeader">{{TPL_ORG_Anzeigename}} bestätigt folgende Kompetenzen:</div>
+          <div class="competencesTxt">{{{TPL_PRO_ZertifizierteKompetenzen}}}</div>
+        </div>
+      </div>
+      
+      <div class="certDetail"> 
+        {{{TPL_ZERT_VerifyQR}}}
+
+        <div class="certDetails">
+          <div>
+            <div>Verify-Link: {{{TPL_ZERT_VerifyLink}}}</div>
+            <div>VeriableVC-ID: {{TPL_ZERT_CredentialId}}</div>
+          </div>
+
+          <div class="certInfo">
+            <div>Ablaufdatum: {{TPL_ZERT_ZertifikatAblaufdatum}}</div>
+            <div>Format: {{TPL_ZERT_Format}}{{#if TPL_PRO_ZertifikatNiveau}}, Niveau: {{TPL_PRO_ZertifikatNiveau}} {{/if}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rightCorner">
+        <div class="companyName">{{TPL_ORG_Firmenname}}</div>
+        <div>{{TPL_ORG_Firmenzusatz}}</div>
+        <div>{{TPL_ORG_Strasse}}</div>
+        <div>{{TPL_ORG_PLZ}} {{TPL_ORG_Ort}}</div>
+        <div>{{TPL_ORG_Land}}</div>
+      </div>
+
+    </div>
+    <div class="badgeContainer">
+      {{{TPL_PRO_ZertifikatBadge}}}
+    </div>
+  </div>
+
+</body>
+</html>
