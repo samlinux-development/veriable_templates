@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>en_k_3</title>
+
+  <style>
+
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .template {
+      height: 793px;
+      width: 1122px;
+      position: relative;
+      display: -webkit-box;
+    }
+
+    .lSide {
+      height: 100%;
+      width: 275px;
+      background-image: -webkit-linear-gradient(bottom right, #ffc107, rgb(209, 115, 0));
+    }
+
+    .rocket {
+      height: 813px;
+      width: 335px;
+      transform: translate(-60px, -20px);
+      -webkit-transform: translate(-60px, -20px);
+      background-repeat: repeat-y;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(177, 115, 0)' height='450px' width='450px' viewBox='0 -960 960 960'%3E%3Cpath d='m187-551 106 45q18-36 38.5-71t43.5-67l-79-16-109 109Zm154 81 133 133q57-26 107-59t81-64q81-81 119-166t41-192q-107 3-192 41T464-658q-31 31-64 81t-59 107Zm229-96q-20-20-20-49.5t20-49.5q20-20 49.5-20t49.5 20q20 20 20 49.5T669-566q-20 20-49.5 20T570-566Zm-15 383 109-109-16-79q-32 23-67 43.5T510-289l45 106Zm326-694q9 136-34 248T705-418l-2 2-2 2 22 110q3 15-1.5 29T706-250L535-78l-85-198-170-170-198-85 172-171q11-11 25-15.5t29-1.5l110 22q1-1 2-1.5t2-1.5q99-99 211-142.5T881-877ZM149-325q35-35 85.5-35.5T320-326q35 35 34.5 85.5T319-155q-26 26-80.5 43T75-80q15-109 31.5-164t42.5-81Zm42 43q-14 15-25 47t-19 82q50-8 82-19t47-25q19-17 19.5-42.5T278-284q-19-18-44.5-17.5T191-282Z'/%3E%3C/svg%3E");
+    }
+
+    .content {
+      margin-left: 50px;
+      max-width: 740px;
+      width: 100%;
+      position: relative;
+      height: 100%;
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 0px;
+    }
+
+    .badge img{
+      max-height: 150px;
+    }
+
+    .templateHeader {
+      padding-top: 80px;
+      position: relative;
+    }
+
+    .level {
+      position: absolute;
+      top: 80px;
+      left: 0px;
+      padding: 6px;
+      border-radius: 13px;
+      border: 3px solid #ffc107;
+      background-color: rgb(255, 212, 7);
+      letter-spacing: 2px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .templateType {
+      margin-top: 70px;
+      font-size: 50px;
+      padding-bottom: 30px;
+      border-bottom: 3px solid #ffc107;
+      width: 100%;
+    }
+
+    .fullName {
+      margin-top: 20px;
+      font-size: 55px;
+      font-weight: bold;
+    }
+
+    .courseDoneTxt {
+      margin-top: 20px;
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .courseInfo {
+      margin-bottom: 25px;
+    }
+
+    .competencesHeader {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .competencesTxt {
+      font-size: 18px;
+      max-height: 140px;
+      overflow: hidden;
+    }
+
+    .competencesTxt p {
+      margin: 0px;
+    }
+
+    .companyInfo {
+      position: absolute;
+      bottom: 18px;
+      right: 0px;
+      text-align: right;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .companyName {
+      font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+
+  <div class="template">
+    <div class="lSide">
+      <div class="rocket"></div>
+    </div>
+    <div class="content">
+
+      <div class="badge">{{{TPL_PRO_KursBadge}}}</div>
+
+      <div class="templateHeader">
+        {{#if TPL_PRO_KursNiveau}}
+        <div class="level">{{TPL_PRO_KursNiveau}}</div>
+        {{/if}}
+
+        <div class="templateType">Confirmation of Participation</div>
+      </div>
+
+      <div class="fullName">{{TPL_TN_GanzerName}}</div>
+
+      <div class="courseDoneTxt">
+        {{#if TPL_PRO_IstSp}}
+        has successfully completed the course "{{TPL_PRO_Bezeichnung}}" on {{TPL_PRO_Kursabschluss}}.
+        {{else}}
+        has participated in the course {{#if TPL_PRO_IstLg}} bundle {{/if}} "{{TPL_PRO_Bezeichnung}}" from {{TPL_PRO_KursBeginn}} to {{TPL_PRO_KursEnde}}.
+        {{/if}}
+      </div>
+
+      {{#if TPL_PRO_KursDauer}}
+      <div class="courseInfo">Scope: {{TPL_PRO_KursDauer}}</div>
+      {{/if}}
+    
+      <div class="competences">
+        <div class="competencesHeader">The following competences were taught by {{TPL_ORG_Anzeigename}}:</div>
+        <div class="competencesTxt">{{{TPL_PRO_KursKompetenz}}}</div>
+      </div>
+
+      <div class="companyInfo">
+        <div class="companyName">{{TPL_ORG_Firmenname}}</div>
+        <div>{{TPL_ORG_Firmenzusatz}}</div>
+        <div>{{TPL_ORG_Strasse}}</div>
+        <div>{{TPL_ORG_PLZ}} {{TPL_ORG_Ort}}</div>
+        <div>{{TPL_ORG_Land}}</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
