@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>de_z_4</title>
+
+  <style>
+
+    body {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .template {
+      height: 783px;
+      width: 1113px;
+      position: relative;
+      border: 5px solid gray;
+    }
+
+    .qrCode {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    .qrCode img {
+      max-height: 150px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-top: 20px;
+      margin-left: 120px;
+      margin-right: 120px;
+    }
+
+    .orgLogo img {
+      max-height: 80px;
+    }
+
+    .templateType {
+      margin-top: 40px;
+      font-size: 70px;
+      font-weight: bold;
+    }
+
+    .fullName {
+      margin-top: 30px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .certDoneTxt {
+      margin-top: 5px;
+      font-size: 25px;
+    }
+
+    .competences {
+      margin-top: 60px;
+    }
+
+    .competencesHeader {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .competencesTxt {
+      margin-top: 5px;
+      font-size: 20px;
+      max-height: 125px;
+      overflow: hidden;
+    }
+
+    .competencesTxt p {
+      margin: 0px;
+    }
+
+    .competencesTxt ol,ul {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-box-align: center;
+      margin: 0px;
+    }
+
+    .certDetail {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .certDetail .certInfo {
+      margin-top: 10px;
+    }
+
+    .companyInfo {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      text-align: right;
+    }
+
+    .companyName {
+      font-weight: bold;
+    }
+
+    .backgroundImageContainer {
+      position: absolute;
+      z-index: 0;
+      top: 160px;
+      left: 0px;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-box-pack: center;
+    }
+
+    .backgroundImageContainer img {
+      height: 530px;
+      width: 530px;
+      max-height: 530px;
+      max-width: 530px;
+      opacity: 0.2;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="template">
+    <div class="qrCode">{{{TPL_ZERT_VerifyQR}}}</div>
+
+    <div class="content">
+      <div class="orgLogo">{{{TPL_ORG_Logo}}}</div>
+
+      <div class="templateType">Certificate of Achievement</div>
+
+      <div class="fullName">{{TPL_TN_GanzerName}}</div>
+
+      <div class="certDoneTxt">has successfully completed the certification "{{TPL_PRO_Bezeichnung}}" on {{TPL_ZERT_ZertifikatDatum}}.</div>
+    
+      <div class="competences">
+        <div class="competencesHeader">{{TPL_ORG_Anzeigename}} confirms the following competences:</div>
+        <div class="competencesTxt">{{{TPL_PRO_ZertifizierteKompetenzen}}}</div>
+      </div>
+    </div>
+
+    <div class="certDetail">
+      <div>
+        <div>Verified Credential: {{{TPL_ZERT_VerifyLink}}}</div>
+        <div>VeriableVC-ID: {{TPL_ZERT_CredentialId}}</div>
+      </div>
+
+      <div class="certInfo">
+        <div>Expiry date: {{TPL_ZERT_ZertifikatAblaufdatum}}</div>
+        <div>Format: {{TPL_ZERT_Format}}{{#if TPL_PRO_ZertifikatNiveau}}, Level: {{TPL_PRO_ZertifikatNiveau}}{{/if}}</div>
+      </div>
+    </div>
+
+    <div class="companyInfo">
+      <div class="companyName">{{TPL_ORG_Firmenname}}</div>
+      <div>{{TPL_ORG_Firmenzusatz}}</div>
+      <div>{{TPL_ORG_Strasse}}</div>
+      <div>{{TPL_ORG_PLZ}} {{TPL_ORG_Ort}}</div>
+      <div>{{TPL_ORG_Land}}</div>
+      <div>{{TPL_ORG_ReferenzLink}}</div>
+    </div>
+
+    <div class="backgroundImageContainer">{{{TPL_ORG_Logo}}}</div>
+  </div>
+
+</body>
+</html>
