@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>de_z_5</title>
+
+  <style>
+
+    body {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .template {
+      height: 1113px;
+      width: 783px;
+      position: relative;
+      border: 5px solid #ffc107;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .orgLogo {
+      width: 100%;
+      text-align: right;
+    }
+
+    .orgLogo img {
+      padding-top: 10px;
+      padding-right: 10px;
+      max-height: 70px;
+    }
+
+    .templateType {
+      font-size: 50px;
+      font-weight: bold;
+      color: #ffc107;
+      margin-top: 25px;
+    }
+
+    .certDoneTxt {
+      margin-top: 25px;
+      font-size: 25px;
+    }
+
+    .templateTable {
+      width: 72.5%;
+      margin-top: 125px;
+      margin-left: 110px;
+      border-collapse: collapse;
+    }
+
+    .templateTable tr {
+      vertical-align: top;
+      border-bottom: 1px solid #646464;
+      line-height: 30px;
+    }
+
+    .templateTable tr td:first-child {
+      width: 25%;
+      text-align: left;
+    }
+
+    .templateTable tr td:last-child {
+      text-align: left;
+    }
+
+    .templateTable tr td div {
+      max-height: 100px;
+      overflow: hidden;
+    }
+
+    ul, ol {
+      display: -webkit-box;
+    }
+
+    p, ul, ol {
+      margin: 0px;
+    }
+
+    .companyInfo {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
+
+    .fullName {
+      font-weight: bold;
+    }
+
+    .qrContainer {
+      margin-top: 25px;
+    }
+
+    .qrContainer img{
+      max-height: 125px;
+    }
+
+    .backgroundImage {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      z-index: 1;
+    }
+
+    .backgroundImage img {
+      height: 600px;
+      max-width: 750px;
+      opacity: 0.2;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="template">
+    <div class="orgLogo">{{{TPL_ORG_Logo}}}</div>
+
+    <div class="templateType">Certificate of Achievement</div>
+
+    <div class="certDoneTxt">{{TPL_ORG_Anzeigename}} issues this certificate.</div>
+    
+    <table class="templateTable">
+      <tr>
+        <td>Certificate holder:</td>
+        <td class="fullName"><div>{{TPL_TN_GanzerName}}</div></td>
+      </tr>
+      <tr>
+        <td>Certificate:</td>
+        <td><div>{{TPL_PRO_Bezeichnung}}</div></td>
+      </tr>
+      {{#if TPL_PRO_ZertifikatNiveau}}
+      <tr>
+        <td>Level:</td>
+        <td><div>{{TPL_PRO_ZertifikatNiveau}}</div></td>
+      </tr>
+      {{/if}}
+      <tr>
+        <td>Content:</td>
+        <td><div>{{{TPL_PRO_KursInhalt}}}</div></td>
+      </tr>
+      <tr>
+        <td>Competences:</td>
+        <td><div>{{{TPL_PRO_ZertifizierteKompetenzen}}}</div></td>
+      </tr>
+    </table>
+
+    <table class="templateTable">
+      <tr>
+        <td>Credential Id:</td>
+        <td><div>{{TPL_ZERT_CredentialId}}</div></td>
+      </tr>
+      <tr>
+        <td>Verified Credential:</td>
+        <td><div>{{{TPL_ZERT_VerifyLink}}}</div></td>
+      </tr>
+      <tr>
+        <td>Date of issue:</td>
+        <td><div>{{TPL_ZERT_ZertifikatDatum}}</div></td>
+      </tr>
+      <tr>
+        <td>Expiry date:</td>
+        <td><div>{{TPL_ZERT_ZertifikatAblaufdatum}}</div></td>
+      </tr>
+    </table>
+
+    <div class="qrContainer">{{{TPL_ZERT_VerifyQR}}}</div>
+
+    <div class="companyInfo">
+      <div>{{TPL_ORG_Firmenname}}{{#if TPL_ORG_Firmenzusatz}}, {{TPL_ORG_Firmenzusatz}}{{/if}}</div>
+      <div>{{TPL_ORG_Strasse}}, {{TPL_ORG_PLZ}} {{TPL_ORG_Ort}}, {{TPL_ORG_Land}}</div>
+      <div>{{TPL_ORG_ReferenzLink}}</div>
+    </div>
+
+    <div class="backgroundImage">{{#if TPL_PRO_ZertifikatBadge}} {{{TPL_PRO_ZertifikatBadge}}} {{else}} {{{GLOBAL_TPL_IMAGE_2}}} {{/if}}</div>
+  </div>
+
+</body>
+</html>

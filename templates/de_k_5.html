@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>de_z_5</title>
+
+  <style>
+
+    body {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .template {
+      height: 1113px;
+      width: 783px;
+      position: relative;
+      border: 5px solid #ffc107;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .orgLogo {
+      width: 100%;
+      text-align: right;
+    }
+
+    .orgLogo img {
+      padding-top: 10px;
+      padding-right: 10px;
+      max-height: 70px;
+    }
+
+    .templateType {
+      font-size: 50px;
+      font-weight: bold;
+      color: #ffc107;
+      margin-top: 23px;
+    }
+
+    .courseDoneTxt {
+      margin-top: 25px;
+      font-size: 25px;
+    }
+
+    .templateTable {
+      width: 72.5%;
+      margin-top: 125px;
+      margin-left: 110px;
+      border-collapse: collapse;
+    }
+
+    .templateTable tr {
+      vertical-align: top;
+      border-bottom: 1px solid #646464;
+      line-height: 30px;
+    }
+
+    .templateTable tr td:first-child {
+      width: 23%;
+      text-align: left;
+    }
+
+    .templateTable tr td:last-child {
+      text-align: left;
+    }
+
+    .templateTable tr td div {
+      max-height: 150px;
+      overflow: hidden;
+    }
+
+    ul, ol {
+      display: -webkit-box;
+    }
+
+    p, ul, ol {
+      margin: 0px;
+    }
+
+    .companyInfo {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
+
+    .fullName {
+      font-weight: bold;
+    }
+
+    .backgroundImage {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      z-index: 1;
+    }
+
+    .backgroundImage img {
+      height: 600px;
+      max-width: 750px;
+      opacity: 0.2;
+    } 
+
+  </style>
+</head>
+<body>
+  
+  <div class="template">
+    <div class="orgLogo">{{{TPL_ORG_Logo}}}</div>
+
+    <div class="templateType">Teilnahmebestätigung</div>
+
+    <div class="courseDoneTxt">
+      {{TPL_ORG_Anzeigename}} bestätigt den Abschluss von:
+    </div>
+    
+    <table class="templateTable">
+      <tr>
+        <td><div>Teilnehmer/-in:</div></td>
+        <td class="fullName"><div>{{TPL_TN_GanzerName}}</div></td>
+      </tr>
+      <tr>
+        <td><div>{{#if TPL_PRO_IstLg}} Lehrgang: {{else}} Kurs: {{/if}}</div></td>
+        <td><div>{{TPL_PRO_Bezeichnung}}</div></td>
+      </tr>
+      {{#if TPL_PRO_KursNiveau}}
+      <tr>
+        <td><div>Niveau:</div></td>
+        <td><div>{{TPL_PRO_KursNiveau}}</div></td>
+      </tr>
+      {{/if}}
+      <tr>
+        <td><div>Format:</div></td>
+        <td><div>{{TPL_PRO_Format}}</div></td>
+      </tr>
+      {{#if TPL_PRO_IstSp}}
+      {{else}}
+      <tr>
+        <td><div>Termin:</div></td>
+        <td><div>{{TPL_PRO_KursBeginn}} - {{TPL_PRO_KursEnde}}</div></td>
+      </tr>
+      {{/if}}
+      {{#if TPL_PRO_KursDauer}}
+      <tr>
+        <td><div>Umfang:</div></td>
+        <td><div>{{TPL_PRO_KursDauer}}</div></td>
+      </tr>
+      {{/if}}
+      <tr>
+        <td><div>Inhalt:</div></td>
+        <td><div>{{{TPL_PRO_KursInhalt}}}</div></td>
+      </tr>
+      <tr>
+        <td><div>Kompetenzen:</div></td>
+        <td><div>{{{TPL_PRO_KursKompetenz}}}</div></td>
+      </tr>
+    </table>
+
+    <table class="templateTable">
+      <tr>
+        <td><div>Datum:</div></td>
+        <td><div>{{TPL_Datum}}</div></td>
+      </tr>
+      {{#if TPL_PRO_Kursleiter}}
+      <tr>
+        <td><div>Kursleiter/-in:</div></td>
+        <td><div>{{TPL_PRO_Kursleiter}}</div></td>
+      </tr>
+      {{/if}}
+    </table>
+
+    <div class="companyInfo">
+      <div>{{TPL_ORG_Firmenname}}{{#if TPL_ORG_Firmenzusatz}}, {{TPL_ORG_Firmenzusatz}}{{/if}}</div>
+      <div>{{TPL_ORG_Strasse}}, {{TPL_ORG_PLZ}} {{TPL_ORG_Ort}}, {{TPL_ORG_Land}}</div>
+      <div>{{TPL_ORG_ReferenzLink}}</div>
+    </div>
+
+    <div class="backgroundImage">{{#if TPL_PRO_KursBadge}} {{{TPL_PRO_KursBadge}}} {{else}} {{{GLOBAL_TPL_IMAGE_2}}} {{/if}}</div>
+  </div>
+
+</body>
+</html>
