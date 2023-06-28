@@ -27,3 +27,7 @@ Follow the guide to use one of these templates as VERIABLE templates.
 | `5` | ![](./thumbs/thumb_en_k_5.png) | portrait | en | Confirmation of participation | [template](./templates/en_k_5.html) |
 | `5` | ![](./thumbs/thumb_de_z_5.png) | portrait | de | Zertifikat | [template](./templates/de_z_5.html) |
 | `5` | ![](./thumbs/thumb_en_z_5.png) | portrait | en | Certificate | [template](./templates/en_z_5.html) |
+| `6` | ![](./thumbs/thumb_de_k_6.png) | landscape | de | Teilnahmebestätigung | [template](./templates/de_k_6.html) |
+| `6` | ![](./thumbs/thumb_en_k_6.png) | landscape | en | Confirmation of participation | [template](./templates/en_k_6.html) |
+| `6` | ![](./thumbs/thumb_de_z_6.png) | landscape | de | Zertifikat | [template](./templates/de_z_6.html) |
+| `6` | ![](./thumbs/thumb_en_z_6.png) | landscape | en | Certificate | [template](./templates/en_z_6.html) |
