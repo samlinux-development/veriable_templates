@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>en_k_6</title>
+
+  <style>
+
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .template {
+      position: relative;
+      width: 1063px;
+      height: 733px;
+      border: 30px solid #1d4a46;
+    }
+
+    .skewBackground {
+      z-index: 1;
+      position: absolute;
+      top: -30px;
+      left: -390px;
+      width: 600px;
+      height: 793px;
+      background-color: #1d4a46;
+      transform: skew(17.5deg);
+      -webkit-transform: skew(17.5deg);
+    }
+
+    .manLogo {
+      position: absolute;
+      right: 120px;
+      bottom: 50px;
+      transform: skew(-17.5deg);
+      -webkit-transform: skew(-17.5deg);
+    }
+
+    .manLogo img {
+      max-height: 125px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      left: 160px;
+    }
+
+    .badge img {
+      max-height: 150px;
+      max-width: 150px;
+    }
+
+    .content {
+      position: absolute;
+      top: 0px;
+      right: 20px;
+      width: 67%;
+      text-align: center;
+    }
+
+    .templateType {
+      font-weight: bold;
+      font-size: 55px;
+      margin-top: 75px;
+    }
+
+    .fullName {
+      font-size: 45px;
+      margin-top: 30px;
+      color: #1d4a46;
+    }
+
+    .courseDoneTxt {
+      font-size: 25px;
+      margin-top: 30px;
+    }
+
+    .courseInfo {
+      margin-top: 35px;
+      margin-bottom: 35px;
+    }
+
+    .competencesHeader {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .competencesTxt {
+      font-size: 19px;
+      max-height: 100px;
+      overflow: hidden;
+    }
+
+    ul, ol {
+      display: -webkit-box;
+      -webkit-box-pack: center;
+    }
+
+    p, ul, ol {
+      margin: 0px;
+    }
+
+    .companyInfo {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      text-align: right;
+      font-size: 15px;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="template">
+    <div class="badge">{{{GLOBAL_TPL_IMAGE_3}}}</div>
+
+    <div class="content">
+      <div class="templateType">Confirmation of Participation</div>
+
+      <div class="fullName">{{TPL_TN_GanzerName}}</div>
+
+      <div class="courseDoneTxt">
+        {{#if TPL_PRO_IstSp}}
+          has successfully completed the course "{{TPL_PRO_Bezeichnung}}" on {{TPL_PRO_Kursabschluss}}.
+        {{else}}
+          has participated in the course {{#if TPL_PRO_IstLg}}bundle{{/if}} "{{TPL_PRO_Bezeichnung}}" from {{TPL_PRO_KursBeginn}} to {{TPL_PRO_KursEnde}}.
+        {{/if}}
+      </div>
+
+      <div class="courseInfo">
+        {{#if TPL_PRO_KursDauer}}
+          Scope: {{TPL_PRO_KursDauer}}{{#if TPL_PRO_KursNiveau}},{{/if}}
+        {{/if}}
+
+        {{#if TPL_PRO_KursNiveau}}
+          Level: {{TPL_PRO_KursNiveau}}
+        {{/if}}
+      </div>
+    
+      <div class="competences">
+        <div class="competencesHeader">The following competences were taught by {{TPL_ORG_Anzeigename}}:</div>
+        <div class="competencesTxt">{{{TPL_PRO_KursKompetenz}}}</div>
+      </div>
+    </div>
+
+    <div class="companyInfo">
+      <div class="companyName">{{TPL_ORG_Firmenname}}</div>
+      <div>{{TPL_ORG_Firmenzusatz}}</div>
+      <div>{{TPL_ORG_Strasse}}</div>
+      <div>{{TPL_ORG_PLZ}} {{TPL_ORG_Ort}}</div>
+      <div>{{TPL_ORG_Land}}</div>
+      {{#if TPL_ORG_ReferenzLink}}
+      <div>{{TPL_ORG_ReferenzLink}}</div>
+      {{/if}}
+    </div>
+
+    <div class="skewBackground">
+      <div class="manLogo">{{{TPL_ORG_Logo}}}</div>
+    </div>
+  </div>
+
+</body>
+</html>
