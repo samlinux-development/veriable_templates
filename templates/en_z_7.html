@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>en_z_7</title>
+
+  <style>
+
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .template {
+      height: 793.9px;
+      width: 1122px;
+      position: relative;
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      background-image: -webkit-linear-gradient(#ff14ec, #ff3d02);
+    }
+
+    .content {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .content div {
+      margin-left: 15px;
+      color: #1f005e;
+    }
+
+    .templateType div {
+      font-size: 80px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #3c00ba;
+      width: 700px;      
+      z-index: 5;
+      position: relative;
+    }
+
+    .fullName div {
+      color: #3c00ba;
+      font-size: 50px;
+      font-weight: bold;
+      margin-left: 0px;
+      position: relative;
+      z-index: 5;
+    } 
+
+    .certDoneTxt {
+      font-size: 35px;
+      margin-top: 80px;
+      margin-bottom: 30px;
+      margin-left: 100px !important;
+      position: relative;
+      z-index: 5;
+      background-color: #D8BA61;
+      padding: 10px;
+      white-space: nowrap;
+      display: table;
+    } 
+
+    .certDoneTxt div {
+      margin-left: 0px;
+    }
+
+    .competencesContainer {
+      position: absolute;
+      bottom: 150px;
+      right: 50px;
+    }
+
+    .competences {
+      position: relative;
+      z-index: 5;
+      background-color: #D8BA61;
+      padding: 10px;
+      width: 280px;
+      height: 280px;
+    }
+
+    .competences div {
+      margin-left: 0px;
+    }
+
+    .competencesTxt {
+      font-size: 35px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .competencesTxt p {
+      margin: 0px;
+    }
+
+    .certDetail {
+      display: -webkit-box;
+      -webkit-box-align: center;
+      position: absolute;
+      bottom: 0px;
+    }
+
+    .certDetail img{
+      max-height: 120px;
+    }
+
+    .certDetails {
+      background-color: #ff4af0;
+      display: table;
+      padding: 10px;
+      position: relative;
+      z-index: 5;
+      margin-bottom: 5px;
+    }
+
+    .certDetails div {
+      font-size: 17px;
+      margin-bottom: 2px;
+      margin-left: 0px;
+    }
+
+    .certDetails .certInfo {
+      margin-top: 15px;
+      margin-bottom: 0px;
+    }
+
+    .badgeContainer {
+      max-width: 295px;
+      width: 100%;
+      z-index: 5;
+      position: absolute;
+      right: 50px;
+      top: 30px;
+      text-align: right;
+    }
+
+    .badgeContainer img {
+      max-height: 300px;
+    }
+
+    .rightCorner {
+      position: absolute;
+      bottom: 5px;
+      right: 115px;
+      font-size: 17px;
+      text-align: right;
+      width: 100%;
+      z-index: 5;
+    } 
+
+    .blocks div {
+      width: 100px;
+      height: 100px;
+      background-color: #fe13ec;
+      position: absolute;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="template">
+    <div class="content">
+      <div class="templateType">
+        <div>CERTIFICATE OF ACHIEVEMENT</div>
+      </div>
+      
+      <div>
+        <div class="fullName">
+          <div>{{TPL_TN_GanzerName}}</div>
+        </div>
+
+        <div class="certDoneTxt">
+          <div>
+            has successfully passed the 
+          </div>
+
+          <div style="font-weight: bold; margin-top: 10px; margin-bottom: 10px;">
+            B3YOND THE BLOCKCHAIN:
+          </div>
+
+          <div style="font-weight: bold; margin-bottom: 10px;">
+            ICP Third Anniversary
+          </div>
+
+          <div>
+            Certification on {{TPL_ZERT_ZertifikatDatum}}.
+          </div>
+        </div>
+      </div>
+
+      <div class="competencesContainer">
+        <div class="competences">
+          <div class="competencesTxt">
+            Certified to Master Web3 Criteria and Detail Key Internet Computer Components.
+          </div>
+        </div>
+      </div>
+
+      <div class="certDetail"> 
+        {{{TPL_ZERT_VerifyQR}}}
+
+        <div class="certDetails">
+          <div>
+            <div>Verified Credential: {{{TPL_ZERT_VerifyLink}}}</div>
+            <div>VeriableVC-ID: {{TPL_ZERT_CredentialId}}</div>
+          </div>
+
+          <div class="certInfo">
+            <div>Expiry date: {{TPL_ZERT_ZertifikatAblaufdatum}}</div>
+            <div style="margin-bottom: 0px;">Format: {{TPL_ZERT_Format}}{{#if TPL_PRO_ZertifikatNiveau}}, Level: {{TPL_PRO_ZertifikatNiveau}} {{/if}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rightCorner">
+        {{TPL_ORG_Firmenname}} / {{TPL_ORG_Land}}
+      </div>
+    </div>
+
+    <div class="badgeContainer">
+      {{{TPL_PRO_ZertifikatBadge}}}
+    </div>
+
+    <div class="blocks">
+      <div style="top: 30px; left: 550px; width: 200px; height: 200px;"></div>
+      <div style="top: 230px; left: 750px;"></div>
+      <div style="top: 330px; left: 850px; width: 200px; height: 200px;"></div>
+      <div style="top: 330px; left: 400px; width: 350px; height: 350px;"></div>
+      <div style="top: 680px; left: 300px;"></div>
+      <div style="bottom: 0px; right: 0px;"></div>
+    </div>
+  </div>
+
+</body>
+</html>
