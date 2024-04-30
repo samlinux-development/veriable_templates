@@ -31,3 +31,4 @@ Follow the guide to use one of these templates as VERIABLE templates.
 | `6` | ![](./thumbs/thumb_en_k_6.png) | landscape | en | Confirmation of participation | [template](./templates/en_k_6.html) |
 | `6` | ![](./thumbs/thumb_de_z_6.png) | landscape | de | Zertifikat | [template](./templates/de_z_6.html) |
 | `6` | ![](./thumbs/thumb_en_z_6.png) | landscape | en | Certificate | [template](./templates/en_z_6.html) |
+| `7` | ![](./thumbs/thumb_en_z_7.png) | landscape | en | Certificate | [template](./templates/en_z_7.html) |
